@@ -51,20 +51,20 @@ public class LinkedList {
     }
 
     public boolean remove(int value) {
-        Node node = this.head;
-
-        if (node.value == value) {
-            head = head.next;
-
-            return true;
+        if (this.head == null) {
+            return false;
         }
 
-        Node prev = node;
+        if (this.head.value == value) {
+            return remove();
+        }
+
+        Node prev = this.head;
+        Node node = this.head.next;
 
         while (node != null) {
             if (node.value == value) {
-                prev.next = node.next;
-                return true;
+                return remove(prev, node);
             }
 
             prev = node;
@@ -72,6 +72,27 @@ public class LinkedList {
         }
 
         return false;
+    }
+
+    private boolean remove() {
+        this.head = this.head.next;
+
+        if (this.head == null) {
+            clear();
+        }
+
+        return true;
+    }
+
+    private boolean remove(Node prev, Node node) {
+        if (node == this.tail) {
+            prev.next = null;
+            this.tail = prev;
+            return true;
+        }
+
+        prev.next = node.next;
+        return true;
     }
 
     public void removeAll(int value) {
@@ -96,10 +117,18 @@ public class LinkedList {
         return count;
     }
 
+    // доработать крайние случаи
     public void insertAfter(Node nodeAfter, Node nodeToInsert) {
         if (nodeAfter == null) {
-            nodeToInsert.next = head;
-            head = nodeToInsert;
+            nodeToInsert.next = this.head;
+            this.head = nodeToInsert;
+            return;
+        }
+
+        if (nodeAfter == this.tail) {
+            this.tail.next = nodeToInsert;
+            this.tail = nodeToInsert;
+            return;
         }
 
         Node node = find(nodeAfter.value);
