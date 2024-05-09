@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static part01.Functions.sumOfLists;
 
 class LinkedListTest {
     LinkedList list;
@@ -152,5 +153,20 @@ class LinkedListTest {
 
         assertEquals(16, list.head.value);
         assertEquals(11, list.count());
+    }
+
+    @Test
+    void sumOfList() {
+        LinkedList list2 = new LinkedList();
+
+        for (Node node : nodes) {
+            list.addInTail(node);
+            list2.addInTail(node);
+        }
+
+        LinkedList sum = sumOfLists(list, list2);
+
+        assertEquals(0, sum.head.value);
+        assertEquals(18, sum.tail.value);
     }
 }
