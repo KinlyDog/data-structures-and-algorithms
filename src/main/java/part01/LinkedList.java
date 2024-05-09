@@ -56,7 +56,7 @@ public class LinkedList {
         }
 
         if (this.head.value == value) {
-            return remove();
+            return removeHead();
         }
 
         Node prev = this.head;
@@ -64,7 +64,7 @@ public class LinkedList {
 
         while (node != null) {
             if (node.value == value) {
-                return remove(prev, node);
+                return removeNode(prev, node);
             }
 
             prev = node;
@@ -74,7 +74,7 @@ public class LinkedList {
         return false;
     }
 
-    private boolean remove() {
+    private boolean removeHead() {
         this.head = this.head.next;
 
         if (this.head == null) {
@@ -84,7 +84,7 @@ public class LinkedList {
         return true;
     }
 
-    private boolean remove(Node prev, Node node) {
+    private boolean removeNode(Node prev, Node node) {
         if (node == this.tail) {
             prev.next = null;
             this.tail = prev;
@@ -112,12 +112,12 @@ public class LinkedList {
 
         while (node != null) {
             count++;
+            node = node.next;
         }
 
         return count;
     }
 
-    // доработать крайние случаи
     public void insertAfter(Node nodeAfter, Node nodeToInsert) {
         if (nodeAfter == null) {
             nodeToInsert.next = this.head;
