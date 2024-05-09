@@ -120,20 +120,36 @@ public class LinkedList {
 
     public void insertAfter(Node nodeAfter, Node nodeToInsert) {
         if (nodeAfter == null) {
-            nodeToInsert.next = this.head;
-            this.head = nodeToInsert;
+            insertFirst(nodeToInsert);
             return;
         }
 
         if (nodeAfter == this.tail) {
-            this.tail.next = nodeToInsert;
-            this.tail = nodeToInsert;
+            addInTail(nodeToInsert);
             return;
         }
 
-        Node node = find(nodeAfter.value);
+        if (find(nodeAfter.value) == null) {
+            return;
+        }
+
+        Node node = this.head;
+
+        while (node != nodeAfter) {
+            node = node.next;
+        }
+
         nodeToInsert.next = node.next;
         node.next = nodeToInsert;
+    }
+
+    private void insertFirst(Node nodeToInsert) {
+        nodeToInsert.next = this.head;
+        this.head = nodeToInsert;
+
+        if (count() == 1) {
+            this.tail = nodeToInsert;
+        }
     }
 }
 
