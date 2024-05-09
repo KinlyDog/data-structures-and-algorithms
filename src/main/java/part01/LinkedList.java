@@ -85,13 +85,13 @@ public class LinkedList {
     }
 
     private boolean removeNode(Node prev, Node node) {
+        prev.next = node.next;
+
         if (node == this.tail) {
             prev.next = null;
             this.tail = prev;
-            return true;
         }
 
-        prev.next = node.next;
         return true;
     }
 
