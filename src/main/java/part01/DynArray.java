@@ -10,25 +10,24 @@ public class DynArray<T> {
     Class clazz;
 
     public DynArray(Class clz) {
-        clazz = clz; // нужен для безопасного приведения типов
-        // new DynArray<Integer>(Integer.class);
+        clazz = clz;
         count = 0;
         makeArray(16);
     }
 
-    public void makeArray(int new_capacity) {
-        if (new_capacity < 16) {
-            new_capacity = 16;
+    public void makeArray(int newCapacity) {
+        if (newCapacity < 16) {
+            newCapacity = 16;
         }
 
-        capacity = new_capacity;
+        this.capacity = newCapacity;
 
         if (count == 0) {
-            array = (T[]) Array.newInstance(this.clazz, new_capacity);
+            array = (T[]) Array.newInstance(this.clazz, newCapacity);
             return;
         }
 
-        array = Arrays.copyOf(array, new_capacity);
+        array = Arrays.copyOf(array, newCapacity);
     }
 
     public T getItem(int index) {
