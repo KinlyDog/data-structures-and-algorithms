@@ -1,6 +1,5 @@
 package part01;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -60,6 +59,8 @@ class DynArrayTest {
             array.insert(i, i);
         }
 
+        assertEquals(19, array.getItem(19));
+        assertEquals(32, array.capacity);
     }
 
     @Test
@@ -70,6 +71,19 @@ class DynArrayTest {
 
         assertEquals(2, array.getItem(1));
         assertEquals(9, array.count);
+    }
+
+    @Test
+    void removeBufferCompressionTest() throws Exception {
+        for (int i = 0; i < 90; i++) {
+            array.append(i + 10);
+        }
+
+        for (int i = 0; i < 50; i++) {
+            array.remove(i);
+        }
+
+        assertEquals(85, array.capacity);
     }
 
     @Test
