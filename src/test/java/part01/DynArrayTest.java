@@ -2,6 +2,7 @@ package part01;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import part01.dynarray.DynArray;
 
 import static org.junit.jupiter.api.Assertions.*;
 

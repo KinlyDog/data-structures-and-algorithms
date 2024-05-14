@@ -1,4 +1,4 @@
-package part01;
+package part01.dynarray;
 
 import java.lang.reflect.*;
 import java.util.Arrays;
