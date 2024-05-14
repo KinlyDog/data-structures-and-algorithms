@@ -53,3 +53,9 @@ w
 G.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec,8\6\863e0292fd7e9b3e74dafd6cc01f73ba76346482
 
 Q.idea/sonarlint/securityhotspotstore/f/2/f2151f08d67a9e2090395233b8efb104d360d9de,3\2\323ff0d46d928e7dc5496591aaef3adee8ec1b0b
+o
+?src/test/java/part01/doublelinkedlist/DoubleLinkedListTest.java,1\9\19ab42f58438a2f7dc5b4a9379cc528e57148f11
+c
+3src/test/java/part01/linkedlist/LinkedListTest.java,1\f\1f1184087f3d7cedb02c65925f9214b285bc4c21
+_
+/src/test/java/part01/dynarray/DynArrayTest.java,5\f\5fab25c0dfa0d683ac18908d8e5c8ab8886dd9e3
