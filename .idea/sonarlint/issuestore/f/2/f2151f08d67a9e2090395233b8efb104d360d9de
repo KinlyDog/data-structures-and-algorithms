@@ -1,0 +1,9 @@
+
+“	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â ‹8şÛ®÷1J$760d858e-77ba-4882-be59-6c91dc3442eb
+™
+java:S1104"QMake value a static final constant or non-public and provide accessors if needed.(‚¯¥ùÿÿÿÿ8ÿÛ®÷1J$0776f41e-e5f0-4e97-8885-82bcad382bdb
+˜
+java:S1104"PMake next a static final constant or non-public and provide accessors if needed.(±±èÃøÿÿÿÿ8ÿÛ®÷1J$356a0f46-2613-40b1-b158-d9f60398cf3c
+“
+java:S1104"PMake prev a static final constant or non-public and provide accessors if needed.(üÛ´8ÿÛ®÷1J$3011cfbe-740c-4dac-a2bf-9f1f47ae316a
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(»œÊ°ùÿÿÿÿ8€‘Û®÷1J$5d4eaa52-dc97-4982-a64c-c6ab2c403d8c

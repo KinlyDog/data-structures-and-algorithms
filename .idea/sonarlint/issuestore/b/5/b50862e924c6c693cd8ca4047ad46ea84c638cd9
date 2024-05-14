@@ -1,0 +1,16 @@
+
+ˆ	java:S112A"FDefine and throw a dedicated exception instead of using a generic one.(ÛÃ¨í8Ë™’÷1J$84df6e3f-81f6-49c9-bef2-686786a89ab3
+w
+java:S3740
+"/Provide the parametrized type for this generic.(ŞŸÊíûÿÿÿÿ8Ë™’÷1J$5a7b8204-455b-4033-a3cf-12f9a81e3097
+r
+java:S3740"/Provide the parametrized type for this generic.(›åı8Ë™’÷1J$f3667b35-f21a-4a44-bd90-ab913a5954ef
+”
+java:S1104"QMake array a static final constant or non-public and provide accessors if needed.(ï˜âÑ8Ì™’÷1J$e67ea36f-dfd5-4f2f-94db-d4629d04025c
+™
+java:S1104"QMake count a static final constant or non-public and provide accessors if needed.(†Í˜Åıÿÿÿÿ8Ì™’÷1J$76740fb7-a5d7-44eb-b4d4-10d2fc968289
+—
+java:S1104	"TMake capacity a static final constant or non-public and provide accessors if needed.(Ë»¢…8Ì™’÷1J$90c1995d-602b-4d83-886a-0988faa0429c
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(»œÊ°ùÿÿÿÿ8Í™’÷1J$6c00758c-ac1e-420e-a687-46b3c9c48ccb
+¯
+java:S1130A"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ÛÃ¨í8Ö™’÷1J$d96645f4-a54c-4d65-b377-653fdebb5b57
