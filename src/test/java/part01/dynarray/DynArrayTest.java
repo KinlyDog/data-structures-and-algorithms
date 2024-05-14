@@ -1,8 +1,7 @@
-package part01;
+package part01.dynarray;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import part01.dynarray.DynArray;
 
 import static org.junit.jupiter.api.Assertions.*;
 

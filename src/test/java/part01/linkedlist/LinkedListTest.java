@@ -1,9 +1,7 @@
-package part01;
+package part01.linkedlist;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import part01.linkedlist.LinkedList;
-import part01.linkedlist.Node;
 
 import java.util.ArrayList;
 
