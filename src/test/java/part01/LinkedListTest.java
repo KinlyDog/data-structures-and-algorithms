@@ -2,11 +2,13 @@ package part01;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import part01.linkedlist.LinkedList;
+import part01.linkedlist.Node;
 
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static part01.Functions.sumOfLists;
+import static part01.linkedlist.Function.*;
 
 class LinkedListTest {
     LinkedList list;

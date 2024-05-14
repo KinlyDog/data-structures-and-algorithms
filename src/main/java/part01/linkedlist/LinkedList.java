@@ -1,4 +1,4 @@
-package part01;
+package part01.linkedlist;
 
 import java.util.*;
 
@@ -153,36 +153,3 @@ public class LinkedList {
     }
 }
 
-class Node {
-    public int value;
-    public Node next;
-
-    public Node(int value) {
-        this.value = value;
-        this.next = null;
-    }
-}
-
-class Functions {
-    public static LinkedList sumOfLists(LinkedList first, LinkedList second) {
-        LinkedList result = new LinkedList();
-
-        if (first.count() != second.count()) {
-            return result;
-        }
-
-        Node one = first.head;
-        Node two = second.head;
-
-        while (one != null) {
-            Node sum = new Node(one.value + two.value);
-
-            result.addInTail(sum);
-
-            one = one.next;
-            two = two.next;
-        }
-
-        return result;
-    }
-}
