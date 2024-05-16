@@ -43,3 +43,7 @@ U
 %src/main/java/part01/stack/Stack.java,9\6\9609dcdbf906df0a34c1ecf933c866e739f0f54a
 Y
 )src/test/java/part01/stack/StackTest.java,e\e\ee1d6fd07470070813c1964dc589e903637836d0
+X
+(src/main/java/part01/stack/Function.java,0\5\0530a508cf5cd00824839abba73fe487462af755
+\
+,src/test/java/part01/stack/FunctionTest.java,3\1\31c5e8edd5a868725d286cb0619d5a6c55c2181c
