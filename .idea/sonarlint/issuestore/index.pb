@@ -51,3 +51,15 @@ Y
 )src/main/java/part01/stack/Functions.java,d\9\d954a751e68e868ce0d409845ed8a72b83b03963
 ]
 -src/test/java/part01/stack/FunctionTests.java,d\e\de89e924a25829087ec8252bb52036afd8d597d4
+O
+src/main/java/part01/Queue.java,1\6\16514e287257da0ed40632a42fe232204360cd78
+S
+#src/test/java/part01/QueueTest.java,5\1\5163c15274e0b97ab75772758078051b1c0eaf8d
+U
+%src/main/java/part01/queue/Queue.java,8\1\8181e4fe57b90713bc73654d8eac4709e41732b5
+Y
+)src/main/java/part01/queue/Functions.java,9\9\9921ebce6bad916657dde8015ec7c9b8fcf2d3c3
+]
+-src/test/java/part01/queue/FunctionsTest.java,d\f\df373fa5a9153adbdcf8e636a416ce99b99132ff
+Y
+)src/test/java/part01/queue/QueueTest.java,6\9\69c70a60db1e9b2e67171e370362404e86f35387
