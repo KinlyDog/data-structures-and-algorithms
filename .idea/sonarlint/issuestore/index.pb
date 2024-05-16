@@ -37,3 +37,9 @@ c
 3src/test/java/part01/linkedlist/LinkedListTest.java,1\f\1f1184087f3d7cedb02c65925f9214b285bc4c21
 _
 /src/test/java/part01/dynarray/DynArrayTest.java,5\f\5fab25c0dfa0d683ac18908d8e5c8ab8886dd9e3
+U
+%src/main/java/part01/Stack/Stack.java,f\3\f329bde2e665f1cc5aac7312cb8d04d439d5d7f4
+U
+%src/main/java/part01/stack/Stack.java,9\6\9609dcdbf906df0a34c1ecf933c866e739f0f54a
+Y
+)src/test/java/part01/stack/StackTest.java,e\e\ee1d6fd07470070813c1964dc589e903637836d0
