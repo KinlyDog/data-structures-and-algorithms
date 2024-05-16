@@ -47,3 +47,7 @@ X
 (src/main/java/part01/stack/Function.java,0\5\0530a508cf5cd00824839abba73fe487462af755
 \
 ,src/test/java/part01/stack/FunctionTest.java,3\1\31c5e8edd5a868725d286cb0619d5a6c55c2181c
+Y
+)src/main/java/part01/stack/Functions.java,d\9\d954a751e68e868ce0d409845ed8a72b83b03963
+]
+-src/test/java/part01/stack/FunctionTests.java,d\e\de89e924a25829087ec8252bb52036afd8d597d4
