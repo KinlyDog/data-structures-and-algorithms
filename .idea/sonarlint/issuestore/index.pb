@@ -43,18 +43,10 @@ U
 %src/main/java/part01/stack/Stack.java,9\6\9609dcdbf906df0a34c1ecf933c866e739f0f54a
 Y
 )src/test/java/part01/stack/StackTest.java,e\e\ee1d6fd07470070813c1964dc589e903637836d0
-X
-(src/main/java/part01/stack/Function.java,0\5\0530a508cf5cd00824839abba73fe487462af755
-\
-,src/test/java/part01/stack/FunctionTest.java,3\1\31c5e8edd5a868725d286cb0619d5a6c55c2181c
 Y
 )src/main/java/part01/stack/Functions.java,d\9\d954a751e68e868ce0d409845ed8a72b83b03963
 ]
 -src/test/java/part01/stack/FunctionTests.java,d\e\de89e924a25829087ec8252bb52036afd8d597d4
-O
-src/main/java/part01/Queue.java,1\6\16514e287257da0ed40632a42fe232204360cd78
-S
-#src/test/java/part01/QueueTest.java,5\1\5163c15274e0b97ab75772758078051b1c0eaf8d
 U
 %src/main/java/part01/queue/Queue.java,8\1\8181e4fe57b90713bc73654d8eac4709e41732b5
 Y
@@ -63,3 +55,7 @@ Y
 -src/test/java/part01/queue/FunctionsTest.java,d\f\df373fa5a9153adbdcf8e636a416ce99b99132ff
 Y
 )src/test/java/part01/queue/QueueTest.java,6\9\69c70a60db1e9b2e67171e370362404e86f35387
+Z
+*src/main/java/part01/queue/QueueStack.java,a\0\a0532463aadf2fbfe5105bf7d9f6b150dd7476f9
+^
+.src/test/java/part01/queue/QueueStackTest.java,e\a\ea482065ae64121788b4863c32f5e9a41bed7c34
