@@ -59,3 +59,11 @@ Z
 *src/main/java/part01/queue/QueueStack.java,a\0\a0532463aadf2fbfe5105bf7d9f6b150dd7476f9
 ^
 .src/test/java/part01/queue/QueueStackTest.java,e\a\ea482065ae64121788b4863c32f5e9a41bed7c34
+U
+%src/main/java/part01/deque/Deque.java,d\0\d07a10e59b98ac6a8541c1731ea2d7a62da7be52
+Y
+)src/main/java/part01/deque/Functions.java,2\1\21fa1afc6cd84197c8fb66856511c22bd607d871
+Y
+)src/test/java/part01/deque/DequeTest.java,a\d\add483906e03bc357e899c7a733a8f354619c863
+]
+-src/test/java/part01/deque/FunctionsTest.java,4\a\4a28face908d0845b1919155b9498b562de46ec5
