@@ -2,7 +2,6 @@ package part01.orderedlist;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import part01.orderedlist.Node;
 
 import java.util.ArrayList;
 
@@ -96,72 +95,3 @@ class OrderedListTest<T> {
 
 }
 
-class OrderedListAscendingTest {
-    OrderedList ascending;
-
-    @BeforeEach
-    void prepare() {
-        ascending = new OrderedList(true);
-    }
-
-    @Test
-    void addTest() {
-        ascending.add(5);
-        ascending.add(4);
-        ascending.add(2);
-        ascending.add(1);
-        ascending.add(0);
-
-        assertEquals(0, ascending.head.value);
-        assertEquals(5, ascending.tail.value);
-    }
-
-    @Test
-    void findTest() {
-        assertNull(ascending.find(5));
-
-        ascending.add(1);
-        ascending.add(2);
-        ascending.add(5);
-        ascending.add(0);
-
-        assertEquals(ascending.tail, ascending.find(5));
-        assertEquals(ascending.head.next, ascending.find(1));
-        assertEquals(ascending.tail.prev, ascending.find(2));
-    }
-}
-
-class OrderedListDescendingTest {
-    OrderedList descending;
-
-    @BeforeEach
-    void prepare() {
-        descending = new OrderedList(false);
-    }
-
-    @Test
-    void addTest() {
-        descending.add(1);
-        descending.add(2);
-        descending.add(7);
-        descending.add(4);
-        descending.add(5);
-
-        assertEquals(7, descending.head.value);
-        assertEquals(1, descending.tail.value);
-    }
-
-    @Test
-    void findTest() {
-        assertNull(descending.find(5));
-
-        descending.add(1);
-        descending.add(2);
-        descending.add(5);
-        descending.add(0);
-
-        assertEquals(descending.tail, descending.find(0));
-        assertEquals(descending.head.next, descending.find(2));
-        assertEquals(descending.tail.prev, descending.find(1));
-    }
-}

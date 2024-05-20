@@ -75,3 +75,7 @@ G
 src/main/java/main.java,d\3\d3c26bf08301c98991887bafaf09d331e2067b4c
 e
 5src/test/java/part01/orderedlist/OrderedListTest.java,5\6\564ebe0ceaa4c3bb11e687ff73b9967b695663d5
+n
+>src/test/java/part01/orderedlist/OrderedListAscendingTest.java,3\6\36d9629148b1273f11552d80a506739fe4f79747
+o
+?src/test/java/part01/orderedlist/OrderedListDescendingTest.java,9\c\9cb942cd14cf94d4e9c604acdeafb0003978f140
