@@ -15,7 +15,6 @@ public class OrderedList<T> {
         this.ascending = ascending;
     }
 
-    // ok
     public int compare(T v1, T v2) {
         if (v1 instanceof String) {
             return compareStrings(((String) v1).trim(), ((String) v2).trim());
@@ -24,7 +23,6 @@ public class OrderedList<T> {
         return Integer.compare((int) v1, (int) v2);
     }
 
-    // ok
     private int compareStrings(String v1, String v2) {
         if (v1.compareTo(v2) == 0) {
             return 0;
@@ -77,7 +75,6 @@ public class OrderedList<T> {
         this.tail = newNode;
     }
 
-    // ok
     public Node<T> find(T val) {
         Node<T> node = this.head;
 
@@ -98,7 +95,6 @@ public class OrderedList<T> {
         return null;
     }
 
-    // ok
     public boolean delete(T value) {
         if (deleter(value)) {
             size--;
@@ -135,7 +131,6 @@ public class OrderedList<T> {
         return true;
     }
 
-    // ok
     private boolean removeHead() {
         if (this.count() == 1) {
             clear(true);
@@ -149,7 +144,6 @@ public class OrderedList<T> {
         return true;
     }
 
-    // ok
     public void clear(boolean asc) {
         this.ascending = asc;
         this.head = null;
@@ -161,7 +155,6 @@ public class OrderedList<T> {
         return this.size;
     }
 
-    // ok
     public ArrayList<Node<T>> getAll() {
         ArrayList<Node<T>> nodes = new ArrayList<>();
         Node<T> node = head;
