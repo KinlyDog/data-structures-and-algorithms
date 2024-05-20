@@ -17,11 +17,11 @@ public class OrderedList<T> {
 
     // ok
     public int compare(T v1, T v2) {
-        if (v1.getClass() == String.class) {
+        if (v1 instanceof String) {
             return compareStrings(((String) v1).trim(), ((String) v2).trim());
         }
 
-        return compareIntegers((int) v1, (int) v2);
+        return Integer.compare((int) v1, (int) v2);
     }
 
     // ok
@@ -31,19 +31,6 @@ public class OrderedList<T> {
         }
 
         if (v1.compareTo(v2) < 0) {
-            return -1;
-        }
-
-        return 1;
-    }
-
-    // ok
-    private int compareIntegers(int v1, int v2) {
-        if (v1 == v2) {
-            return 0;
-        }
-
-        if (v1 < v2) {
             return -1;
         }
 
