@@ -67,3 +67,11 @@ Y
 )src/test/java/part01/deque/DequeTest.java,a\d\add483906e03bc357e899c7a733a8f354619c863
 ]
 -src/test/java/part01/deque/FunctionsTest.java,4\a\4a28face908d0845b1919155b9498b562de46ec5
+a
+1src/main/java/part01/orderedlist/OrderedList.java,d\a\da5fb2524d5d98cf38a23321d6eb53b73545f1c5
+Z
+*src/main/java/part01/orderedlist/Node.java,6\9\69291a344fb5cb678fc8fde492aa1c038723918d
+G
+src/main/java/main.java,d\3\d3c26bf08301c98991887bafaf09d331e2067b4c
+e
+5src/test/java/part01/orderedlist/OrderedListTest.java,5\6\564ebe0ceaa4c3bb11e687ff73b9967b695663d5
