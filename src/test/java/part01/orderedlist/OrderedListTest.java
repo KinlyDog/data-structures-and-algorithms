@@ -92,6 +92,4 @@ class OrderedListTest<T> {
         assertEquals(5, list.getLast().value);
         assertNotEquals(11, list.get(3).value);
     }
-
 }
-
