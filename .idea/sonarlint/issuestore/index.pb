@@ -87,3 +87,5 @@ k
 ;src/main/java/part01/nativedictionary/NativeDictionary.java,c\b\cb097bcbad1e38c51e57068daddd587e371bf70f
 o
 ?src/test/java/part01/nativedictionary/NativeDictionaryTest.java,2\1\219c86fbaf751d5952cb2b4526f8d5386e5fbcc8
+[
++src/main/java/part01/powerset/PowerSet.java,6\d\6db8723eacee3e4caea8ce607e3fea24cead98c0
