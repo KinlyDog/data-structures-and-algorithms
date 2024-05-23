@@ -68,17 +68,17 @@ public class HashTable {
         int index = hashFun(value);
         int i = index;
 
-        if (this.slots[i] == null) {
-            return -1;
-        }
-
         do {
+            if (this.slots[i] == null) {
+                return -1;
+            }
+
             if (this.slots[i].equals(value)) {
                 return i;
             }
 
             i = stepIndex(i);
-        } while (i != index && slots[i] != null);
+        } while (i != index);
 
         return -1;
     }
