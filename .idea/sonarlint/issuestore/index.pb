@@ -83,3 +83,7 @@ G
 src/main/java/main.java,d\3\d3c26bf08301c98991887bafaf09d331e2067b4c
 a
 1src/test/java/part01/hashtable/HashTableTest.java,9\2\92bf0df66fddddca153ab02c576038072359f5d4
+k
+;src/main/java/part01/nativedictionary/NativeDictionary.java,c\b\cb097bcbad1e38c51e57068daddd587e371bf70f
+o
+?src/test/java/part01/nativedictionary/NativeDictionaryTest.java,2\1\219c86fbaf751d5952cb2b4526f8d5386e5fbcc8
