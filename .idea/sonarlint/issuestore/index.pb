@@ -79,8 +79,6 @@ o
 ?src/test/java/part01/orderedlist/OrderedListDescendingTest.java,9\c\9cb942cd14cf94d4e9c604acdeafb0003978f140
 ]
 -src/main/java/part01/hashtable/HashTable.java,d\7\d71c0499ebce1bae358da5d95c178f80697d612d
-G
-src/main/java/main.java,d\3\d3c26bf08301c98991887bafaf09d331e2067b4c
 a
 1src/test/java/part01/hashtable/HashTableTest.java,9\2\92bf0df66fddddca153ab02c576038072359f5d4
 k
@@ -89,3 +87,5 @@ o
 ?src/test/java/part01/nativedictionary/NativeDictionaryTest.java,2\1\219c86fbaf751d5952cb2b4526f8d5386e5fbcc8
 [
 +src/main/java/part01/powerset/PowerSet.java,6\d\6db8723eacee3e4caea8ce607e3fea24cead98c0
+_
+/src/test/java/part01/powerset/PowerSetTest.java,6\3\63fe9d66d55d96f1c9c13ad3f827c3a94872cc93

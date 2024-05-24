@@ -52,8 +52,7 @@ public class PowerSet {
     }
 
     public int size() {
-        // количество элементов в множестве
-        return 0;
+        return this.count;
     }
 
     public void put(String value) {
@@ -70,6 +69,10 @@ public class PowerSet {
     }
 
     private int find(String value) {
+        if (value == null) {
+            return -1;
+        }
+
         int index = hashFun(value);
         int i = index;
 
@@ -100,29 +103,95 @@ public class PowerSet {
         }
 
         this.slots[index] = null;
+        this.count--;
 
         return true;
     }
 
+    // complete
     public PowerSet intersection(PowerSet set2) {
-        // пересечение текущего множества и set2
+        PowerSet powerSet = new PowerSet();
+
+        for (int i = 0; i < this.size; i++) {
+            if (this.slots[i] == null) {
+                continue;
+            }
+
+            if (set2.get(this.slots[i])) {
+                powerSet.put(this.slots[i]);
+                i++;
+            }
+        }
+
         return null;
     }
 
+    // complete
     public PowerSet union(PowerSet set2) {
-        // объединение текущего множества и set2
-        return null;
+        PowerSet powerSet = new PowerSet();
+
+        if (this.size() + set2.size() == 0) {
+            return powerSet;
+        }
+
+        int i = 0;
+        while (powerSet.size() < this.size()) {
+            if (this.slots[i] != null) {
+                powerSet.put(this.slots[i]);
+                i++;
+            }
+        }
+
+        i = 0;
+        while (powerSet.size() < this.size() + set2.size()) {
+            if (set2.slots[i] != null) {
+                powerSet.put(set2.slots[i]);
+                i++;
+            }
+        }
+
+        return powerSet;
     }
 
+    // ??
     public PowerSet difference(PowerSet set2) {
-        // разница текущего множества и set2
+        PowerSet powerSet = new PowerSet();
+
+        for (int i = 0; i < this.size; i++) {
+            if (set2.slots[i] == null) {
+                continue;
+            }
+
+            if (!this.get(set2.slots[i])) {
+                powerSet.put(this.slots[i]);
+            }
+        }
+
+        for (int i = 0; i < this.size; i++) {
+            if (this.slots[i] == null) {
+                continue;
+            }
+
+            if (!set2.get(this.slots[i])) {
+                powerSet.put(this.slots[i]);
+            }
+        }
+
         return null;
     }
 
+    // complete
     public boolean isSubset(PowerSet set2) {
-        // возвращает true, если set2 есть
-        // подмножество текущего множества,
-        // иначе false
-        return false;
+        for (int i = 0; i < this.size; i++) {
+            if (set2.slots[i] == null) {
+                continue;
+            }
+
+            if (!this.get(set2.slots[i])) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
