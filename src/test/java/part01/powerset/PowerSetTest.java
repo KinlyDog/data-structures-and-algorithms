@@ -1,7 +1,10 @@
 package part01.powerset;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
+
+import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,7 +24,6 @@ class PowerSetTest {
         powerSet.put("3");
         powerSet.put("3");
         powerSet.put("3");
-
 
         assertEquals(3, powerSet.size());
         assertTrue(powerSet.get("1"));
@@ -60,24 +62,50 @@ class PowerSetTest {
     }
 
     @Test
+    void removeOneTest() {
+        assertEquals(0, powerSet.size());
+
+        powerSet.put("1");
+        powerSet.put("2");
+        assertEquals(2, powerSet.size());
+
+        assertTrue(powerSet.remove("1"));
+        assertTrue(powerSet.remove("2"));
+        assertEquals(0, powerSet.size());
+    }
+
+    @RepeatedTest(100)
     void removeTest() {
-        assertFalse(powerSet.remove("5"));
+        assertEquals(0, powerSet.size());
+        int storageSize = 10_000;
+        Random rand = new Random();
 
-        for (int i = 0; i < 30; i++) {
-            String string = String.valueOf(i);
-            powerSet.put(string);
+        String[] strings = new String[storageSize];
+        for (int i = 0; i < storageSize; i++) {
+            StringBuilder builder = new StringBuilder();
+
+            int stringLength = rand.nextInt(500) + 10;
+
+            for (int j = 0; j < stringLength; j++) {
+                int charCode = rand.nextInt(100) + 1;
+                builder.append((char) charCode);
+            }
+
+            powerSet.put(builder.toString());
+            strings[i] = builder.toString();
         }
 
-        assertEquals(30, powerSet.size());
+        assertEquals(storageSize, powerSet.size());
 
-        for (int i = 15; i < 30; i++) {
-            String string = String.valueOf(i);
-            assertTrue(powerSet.remove(string));
+        for (int i = 0; i < storageSize; i++) {
+            assertTrue(powerSet.remove(strings[i]));
         }
 
-        assertEquals(15, powerSet.size());
-        assertFalse(powerSet.remove("29"));
-        assertTrue(powerSet.remove("0"));
-        assertEquals(14, powerSet.size());
+        assertEquals(0, powerSet.size());
+    }
+
+    @Test
+    void differenceTest() {
+
     }
 }
