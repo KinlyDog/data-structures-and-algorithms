@@ -1,6 +1,9 @@
 package part01.powerset;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.SimpleTimeZone;
 
 public class PowerSet {
     private int size;
@@ -68,25 +71,22 @@ public class PowerSet {
         }
     }
 
-    private int find(String value) {
-        if (value == null) {
-            return -1;
-        }
-
+    public int find(String value) {
         int index = hashFun(value);
-        int i = index;
 
-        do {
-            if (this.slots[i] == null) {
-                return -1;
+        for (int i = 0; i < size; i++, index += step) {
+            if (index >= size) {
+                index -= size;
             }
 
-            if (this.slots[i].equals(value)) {
-                return i;
+            if (slots[index] == null) {
+                continue;
             }
 
-            i = stepIndex(i);
-        } while (i != index);
+            if (slots[index].equals(value)) {
+                return index;
+            }
+        }
 
         return -1;
     }
@@ -177,7 +177,7 @@ public class PowerSet {
             }
         }
 
-        return null;
+        return powerSet;
     }
 
     // complete
