@@ -1,6 +1,7 @@
 package part01.hashtable;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
@@ -13,7 +14,7 @@ class HashTableTest {
     int step;
 
     HashTableTest() {
-        this.size = 17;
+        this.size = 997;
         this.step = 3;
     }
 
@@ -84,6 +85,49 @@ class HashTableTest {
             assertTrue(hashTable.find(String.valueOf(i)) > -1);
         }
 
-        assertEquals(-1, hashTable.find("123"));
+        assertEquals(-1, hashTable.find(String.valueOf(this.size)));
+    }
+
+    @RepeatedTest(500)
+    void findSuperTest() {
+        int storageSize = this.size;
+        Random rand = new Random();
+
+        String[] strings = new String[storageSize];
+        for (int i = 0; i < storageSize; i++) {
+            StringBuilder builder = new StringBuilder();
+
+            int stringLength = rand.nextInt(100) + 10;
+
+            for (int j = 0; j < stringLength; j++) {
+                int charCode = rand.nextInt(25) + 50;
+                builder.append((char) charCode);
+            }
+
+            hashTable.put(builder.toString());
+            strings[i] = builder.toString();
+        }
+
+        for (int i = 0; i < storageSize; i++) {
+            assertTrue(hashTable.find(strings[i]) > -1);
+        }
+
+        String[] seconds = new String[storageSize];
+        for (int i = 0; i < storageSize; i++) {
+            StringBuilder builder = new StringBuilder();
+
+            int stringLength = rand.nextInt(100) + 110;
+
+            for (int j = 0; j < stringLength; j++) {
+                int t = rand.nextInt(25) + 50;
+                builder.append((char) t);
+            }
+
+            seconds[i] = builder.toString();
+        }
+
+        for (int i = 0; i < storageSize; i++) {
+            assertFalse(hashTable.find(seconds[i]) > -1);
+        }
     }
 }
