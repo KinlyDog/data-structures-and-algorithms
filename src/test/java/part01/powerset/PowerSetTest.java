@@ -74,7 +74,7 @@ class PowerSetTest {
         assertEquals(0, powerSet.size());
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1000)
     void removeTest() {
         assertEquals(0, powerSet.size());
         int storageSize = 10_000;
@@ -84,10 +84,10 @@ class PowerSetTest {
         for (int i = 0; i < storageSize; i++) {
             StringBuilder builder = new StringBuilder();
 
-            int stringLength = rand.nextInt(500) + 10;
+            int stringLength = rand.nextInt(100) + 10;
 
             for (int j = 0; j < stringLength; j++) {
-                int charCode = rand.nextInt(100) + 1;
+                int charCode = rand.nextInt(25) + 65;
                 builder.append((char) charCode);
             }
 
@@ -105,7 +105,144 @@ class PowerSetTest {
     }
 
     @Test
-    void differenceTest() {
+    void unionTest() {
+        for (int i = 0; i < 50; i++) {
+            powerSet.put(String.valueOf(i));
+        }
 
+        assertEquals(50, powerSet.size());
+
+        PowerSet powerSetSec = new PowerSet();
+        for (int i = 50; i < 100; i++) {
+            powerSetSec.put(String.valueOf(i));
+        }
+
+        assertEquals(50, powerSetSec.size());
+
+        PowerSet unionResult = powerSet.union(powerSetSec);
+
+        for (int i = 0; i < 100; i++) {
+            assertTrue(unionResult.get(String.valueOf(i)));
+        }
+
+        assertEquals(100, unionResult.size());
+    }
+
+    @Test
+    void unionOneSetEmptyTest() {
+        for (int i = 0; i < 50; i++) {
+            powerSet.put(String.valueOf(i));
+        }
+
+        PowerSet powerSetSec = new PowerSet();
+        PowerSet unionResult = powerSet.union(powerSetSec);
+
+        for (int i = 0; i < 50; i++) {
+            assertTrue(unionResult.get(String.valueOf(i)));
+        }
+
+        assertEquals(50, unionResult.size());
+    }
+
+    @Test
+    void intersectionTest() {
+        PowerSet powerSetSec = new PowerSet();
+
+        for (int i = 0; i < 30; i++) {
+            powerSet.put(String.valueOf(i));
+        }
+
+        for (int i = 20; i < 60; i++) {
+            powerSetSec.put(String.valueOf(i));
+        }
+
+        PowerSet intersectionResult = powerSet.intersection(powerSetSec);
+
+        for (int i = 20; i < 30; i++) {
+            assertTrue(intersectionResult.get(String.valueOf(i)));
+        }
+
+        assertEquals(10, intersectionResult.size());
+    }
+
+    @Test
+    void intersectionEmptySetTest() {
+        PowerSet powerSetSec = new PowerSet();
+
+        for (int i = 0; i < 100; i++) {
+            powerSet.put(String.valueOf(i));
+        }
+
+        PowerSet intersectionResult = powerSet.intersection(powerSetSec);
+
+        assertEquals(0, intersectionResult.size());
+    }
+
+    @Test
+    void differenceTest() {
+        PowerSet powerSetSec = new PowerSet();
+
+        for (int i = 0; i < 50; i++) {
+            powerSet.put(String.valueOf(i));
+        }
+
+        for (int i = 30; i < 100; i++) {
+            powerSetSec.put(String.valueOf(i));
+        }
+
+        PowerSet differenceResult = powerSet.difference(powerSetSec);
+
+        for (int i = 0; i < 30; i++) {
+            assertTrue(differenceResult.get(String.valueOf(i)));
+        }
+
+        for (int i = 50; i < 100; i++) {
+            assertTrue(differenceResult.get(String.valueOf(i)));
+        }
+
+        assertEquals(80, differenceResult.size());
+    }
+
+    @Test
+    void differenceEmptyTest() {
+        PowerSet powerSetSec = new PowerSet();
+
+        for (int i = 0; i < 20; i++) {
+            powerSet.put(String.valueOf(i));
+            powerSetSec.put(String.valueOf(i));
+        }
+
+        PowerSet differenceResult = powerSet.difference(powerSetSec);
+        assertEquals(0, differenceResult.size());
+    }
+
+    @Test
+    void isSubsetNotAlItemsAreIncludedTest() {
+        PowerSet powerSetSec = new PowerSet();
+
+        for (int i = 0; i < 50; i++) {
+            powerSet.put(String.valueOf(i));
+        }
+
+        for (int i = 30; i < 60; i++) {
+            powerSetSec.put(String.valueOf(i));
+        }
+
+        assertFalse(powerSet.isSubset(powerSetSec));
+    }
+
+    @Test
+    void isSubsetViceVersaTest() {
+        PowerSet powerSetSec = new PowerSet();
+
+        for (int i = 20; i < 30; i++) {
+            powerSet.put(String.valueOf(i));
+        }
+
+        for (int i = 0; i < 100; i++) {
+            powerSetSec.put(String.valueOf(i));
+        }
+
+        assertFalse(powerSet.isSubset(powerSetSec));
     }
 }
