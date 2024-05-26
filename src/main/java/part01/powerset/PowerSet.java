@@ -1,9 +1,6 @@
 package part01.powerset;
 
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.SimpleTimeZone;
 
 public class PowerSet {
     private int size;
@@ -108,9 +105,8 @@ public class PowerSet {
         return true;
     }
 
-    // complete
     public PowerSet intersection(PowerSet set2) {
-        PowerSet powerSet = new PowerSet();
+        PowerSet intersectionSet = new PowerSet();
 
         for (int i = 0; i < this.size; i++) {
             if (this.slots[i] == null) {
@@ -118,44 +114,43 @@ public class PowerSet {
             }
 
             if (set2.get(this.slots[i])) {
-                powerSet.put(this.slots[i]);
-                i++;
+                intersectionSet.put(this.slots[i]);
             }
         }
 
-        return null;
+        return intersectionSet;
     }
 
-    // complete
     public PowerSet union(PowerSet set2) {
-        PowerSet powerSet = new PowerSet();
+        PowerSet unionSet = new PowerSet();
 
         if (this.size() + set2.size() == 0) {
-            return powerSet;
+            return unionSet;
         }
 
         int i = 0;
-        while (powerSet.size() < this.size()) {
+        while (unionSet.size() < this.size()) {
             if (this.slots[i] != null) {
-                powerSet.put(this.slots[i]);
-                i++;
+                unionSet.put(this.slots[i]);
             }
+
+            i++;
         }
 
         i = 0;
-        while (powerSet.size() < this.size() + set2.size()) {
+        while (unionSet.size() < this.size() + set2.size()) {
             if (set2.slots[i] != null) {
-                powerSet.put(set2.slots[i]);
-                i++;
+                unionSet.put(set2.slots[i]);
             }
+
+            i++;
         }
 
-        return powerSet;
+        return unionSet;
     }
 
-    // ??
     public PowerSet difference(PowerSet set2) {
-        PowerSet powerSet = new PowerSet();
+        PowerSet differenceSet = new PowerSet();
 
         for (int i = 0; i < this.size; i++) {
             if (set2.slots[i] == null) {
@@ -163,7 +158,7 @@ public class PowerSet {
             }
 
             if (!this.get(set2.slots[i])) {
-                powerSet.put(this.slots[i]);
+                differenceSet.put(set2.slots[i]);
             }
         }
 
@@ -173,14 +168,13 @@ public class PowerSet {
             }
 
             if (!set2.get(this.slots[i])) {
-                powerSet.put(this.slots[i]);
+                differenceSet.put(this.slots[i]);
             }
         }
 
-        return powerSet;
+        return differenceSet;
     }
 
-    // complete
     public boolean isSubset(PowerSet set2) {
         for (int i = 0; i < this.size; i++) {
             if (set2.slots[i] == null) {
