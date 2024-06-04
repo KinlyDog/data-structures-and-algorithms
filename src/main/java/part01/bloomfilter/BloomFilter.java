@@ -1,40 +1,37 @@
 package part01.bloomfilter;
 
-import java.util.BitSet;
-
 public class BloomFilter {
     private int filterLen;
-    private BitSet bitSet;
+    private int filter;
 
     public BloomFilter(int filterLen) {
         this.filterLen = filterLen;
-        this.bitSet = new BitSet(filterLen);
+        this.filter = 0;
     }
 
-    private int hash(String string, int seed) {
+    public int hash(String string, int rand) {
         int hash = 0;
 
         for (int i = 0; i < string.length(); i++) {
-            hash = (hash * seed + string.charAt(i)) % filterLen;
+            hash = (hash * rand + string.charAt(i)) % filterLen;
         }
 
         return hash;
     }
 
     public int hash1(String string) {
-        return hash(string, 17);
+        return 1 << hash(string, 17);
     }
 
     public int hash2(String string) {
-        return hash(string, 223);
+        return 1 << hash(string, 223);
     }
 
     public void add(String string) {
-        bitSet.set(hash1(string));
-        bitSet.set(hash2(string));
+        filter |= (hash1(string) | hash2(string));
     }
 
     public boolean isValue(String string) {
-        return bitSet.get(hash1(string)) && bitSet.get(hash2(string));
+        return (filter & hash1(string)) != 0 && (filter & hash2(string)) != 0;
     }
 }
