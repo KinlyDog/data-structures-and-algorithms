@@ -20,7 +20,7 @@ public class SimpleTree<T> {
     }
 
     public void deleteNode(SimpleTreeNode<T> nodeToDelete) {
-        if (nodeToDelete.equals(this.root)) {
+        if (nodeToDelete == this.root) {
             this.root = null;
             return;
         }
@@ -47,33 +47,30 @@ public class SimpleTree<T> {
             return allNodes;
         }
 
-        List<SimpleTreeNode<T>> expand = new ArrayList<>();
-        expand.add(root);
-
-        return getAllNodesRec(allNodes, expand);
+        return getAllNodesRec(root, allNodes);
     }
 
-    private List<SimpleTreeNode<T>> getAllNodesRec(List<SimpleTreeNode<T>> allNodes, List<SimpleTreeNode<T>> expand) {
-        if (expand.isEmpty()) {
-            return allNodes;
+    private List<SimpleTreeNode<T>> getAllNodesRec(SimpleTreeNode<T> node, List<SimpleTreeNode<T>> listNodes) {
+        listNodes.add(node);
+
+        if (node.children == null) {
+            return listNodes;
         }
 
-        allNodes.addAll(expand);
-        List<SimpleTreeNode<T>> expandCopy = List.copyOf(expand);
-        expand.clear();
-
-        for (SimpleTreeNode<T> node : expandCopy) {
-            if (node.children != null) {
-                expand.addAll(node.children);
-            }
+        for (SimpleTreeNode<T> child : node.children) {
+            getAllNodesRec(child, listNodes);
         }
 
-        return getAllNodesRec(allNodes, expand);
+        return listNodes;
     }
 
     public List<SimpleTreeNode<T>> findNodesByValue(T value) {
         List<SimpleTreeNode<T>> allNodes = getAllNodes();
         List<SimpleTreeNode<T>> nodesByValue = new ArrayList<>();
+
+        if (this.root == null) {
+            return nodesByValue;
+        }
 
         for (SimpleTreeNode<T> node : allNodes) {
             if (node.nodeValue.equals(value)) {
@@ -92,12 +89,7 @@ public class SimpleTree<T> {
             parent.children = null;
         }
 
-        if (newParent.children == null) {
-            newParent.children = new ArrayList<>();
-        }
-
-        newParent.children.add(originalNode);
-        originalNode.parent = newParent;
+        addChild(newParent, originalNode);
     }
 
     public int count() {
@@ -105,15 +97,23 @@ public class SimpleTree<T> {
     }
 
     public int leafCount() {
-        int count = 0;
-        List<SimpleTreeNode<T>> allNodes = getAllNodes();
-
-        for (SimpleTreeNode<T> node : allNodes) {
-            if (node.children == null) {
-                count++;
-            }
+        if (this.root == null) {
+            return 0;
         }
 
-        return count;
+        return leafCountRec(root);
+    }
+
+    private int leafCountRec(SimpleTreeNode<T> node) {
+        if (node.children == null) {
+            return 1;
+        }
+
+        int leafCount = 0;
+        for (SimpleTreeNode<T> child : node.children) {
+            leafCount += leafCountRec(child);
+        }
+
+        return leafCount;
     }
 }
