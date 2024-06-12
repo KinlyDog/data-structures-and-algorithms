@@ -50,18 +50,18 @@ public class SimpleTree<T> {
         return getAllNodesRec(root, allNodes);
     }
 
-    private List<SimpleTreeNode<T>> getAllNodesRec(SimpleTreeNode<T> node, List<SimpleTreeNode<T>> listNodes) {
-        listNodes.add(node);
+    private List<SimpleTreeNode<T>> getAllNodesRec(SimpleTreeNode<T> node, List<SimpleTreeNode<T>> allNodes) {
+        allNodes.add(node);
 
         if (node.children == null) {
-            return listNodes;
+            return allNodes;
         }
 
         for (SimpleTreeNode<T> child : node.children) {
-            getAllNodesRec(child, listNodes);
+            getAllNodesRec(child, allNodes);
         }
 
-        return listNodes;
+        return allNodes;
     }
 
     public List<SimpleTreeNode<T>> findNodesByValue(T value) {
@@ -115,5 +115,23 @@ public class SimpleTree<T> {
         }
 
         return leafCount;
+    }
+
+    public void setNodeLevel() {
+        if (this.root != null) {
+            setNodeLevelRec(this.root, 0);
+        }
+    }
+
+    private void setNodeLevelRec(SimpleTreeNode<T> node, int level) {
+        node.level = level;
+
+        if (node.children == null) {
+            return;
+        }
+
+        for (SimpleTreeNode<T> child : node.children) {
+            setNodeLevelRec(child, level + 1);
+        }
     }
 }
