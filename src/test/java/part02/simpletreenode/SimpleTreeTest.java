@@ -157,6 +157,8 @@ class SimpleTreeTest {
         assertSame(node5.parent, node6);
         assertEquals(4, root.children.size());
         assertEquals(2, node6.children.size());
+
+        tree.setNodeLevel();
     }
 
     @Test
@@ -196,5 +198,34 @@ class SimpleTreeTest {
         tree.addChild(root, node5);
         tree.addChild(root, node6);
         assertEquals(4, tree.leafCount());
+    }
+
+    @Test
+    void setNodeLevelTest() {
+        SimpleTreeNode<Integer> node1 = new SimpleTreeNode<>(101, null);
+        SimpleTreeNode<Integer> node2 = new SimpleTreeNode<>(102, null);
+        SimpleTreeNode<Integer> node3 = new SimpleTreeNode<>(103, null);
+        SimpleTreeNode<Integer> node4 = new SimpleTreeNode<>(104, null);
+        SimpleTreeNode<Integer> node5 = new SimpleTreeNode<>(105, null);
+        SimpleTreeNode<Integer> node6 = new SimpleTreeNode<>(106, null);
+
+        tree.addChild(root, node1);
+        tree.addChild(node1, node2);
+        tree.addChild(node2, node3);
+        tree.addChild(node3, node4);
+        tree.addChild(root, node5);
+        tree.addChild(root, node6);
+
+        tree.setNodeLevel();
+
+        assertEquals(0, tree.root.level);
+
+        assertEquals(1, node1.level);
+        assertEquals(1, node5.level);
+        assertEquals(1, node6.level);
+
+        assertEquals(2, node2.level);
+        assertEquals(3, node3.level);
+        assertEquals(4, node4.level);
     }
 }
