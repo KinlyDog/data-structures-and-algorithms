@@ -22,7 +22,7 @@ class SearchAllFilesInDirTest {
 
     @Test
     void testEmptyDirectory() {
-        ArrayList<File> result = searchAllFilesInDir(tempDir.toString());
+        ArrayList<File> result = searchAllFilesInDir(new File(tempDir.toString()));
         assertEquals(0, result.size());
     }
 
@@ -33,7 +33,7 @@ class SearchAllFilesInDirTest {
 
         List<Path> expectedFiles = List.of(file1, file2);
 
-        ArrayList<File> result = searchAllFilesInDir(tempDir.toString());
+        ArrayList<File> result = searchAllFilesInDir(new File(tempDir.toString()));
 
         assertEquals(expectedFiles.size(), result.size());
         for (Path expectedFile : expectedFiles) {
@@ -51,7 +51,7 @@ class SearchAllFilesInDirTest {
 
         List<Path> expectedFiles = List.of(file1, file2, file3);
 
-        ArrayList<File> result = searchAllFilesInDir(tempDir.toString());
+        ArrayList<File> result = searchAllFilesInDir(new File(tempDir.toString()));
 
         assertEquals(expectedFiles.size(), result.size());
         for (Path expectedFile : expectedFiles) {
@@ -64,7 +64,7 @@ class SearchAllFilesInDirTest {
         Files.createDirectory(tempDir.resolve("subDir1"));
         Files.createDirectory(tempDir.resolve("subDir2"));
 
-        ArrayList<File> result = searchAllFilesInDir(tempDir.toString());
+        ArrayList<File> result = searchAllFilesInDir(new File(tempDir.toString()));
 
         assertEquals(0, result.size());
     }
