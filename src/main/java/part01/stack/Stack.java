@@ -32,7 +32,6 @@ public class Stack<T> {
 
     public T peek() {
         if (this.size == 0) {
-
             return null;
         }
 
