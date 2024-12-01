@@ -144,6 +144,16 @@ class LinkedListTest {
     }
 
     @Test
+    void insertAfterInEmptyListIfNodeToInsertNull() {
+        Node node = new Node(5);
+
+        list.insertAfter(null, node);
+        assertEquals(1, list.count());
+        assertEquals(list.head, node);
+        assertEquals(list.tail, node);
+    }
+
+    @Test
     void insertAfterIfNodeIsNull() {
         for (Node node : nodes) {
             list.addInTail(node);
