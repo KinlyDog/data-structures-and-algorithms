@@ -186,9 +186,9 @@ class DoubleLinkedListTest {
     }
 
     @Test
-    void insertAfterInEmptyList() {
-        list.insertAfter(new Node(5), new Node(10));
-        assertEquals(0, list.count());
+    void insertAfterIsNullInEmptyList() {
+        list.insertAfter(null, new Node(10));
+        assertEquals(1, list.count());
     }
 
     @Test

@@ -84,7 +84,7 @@ public class DoubleLinkedList {
     }
 
     private boolean removeHead() {
-        if (this.count() == 1) {
+        if (this.head == this.tail) {
             clear();
 
             return true;
@@ -130,29 +130,20 @@ public class DoubleLinkedList {
             return;
         }
 
-        if (find(nodeAfter.value) == null) {
-            return;
-        }
-
-        Node node = this.head;
-
-        while (node != nodeAfter) {
-            node = node.next;
-        }
-
-        node.next.prev = nodeToInsert;
-        nodeToInsert.next = node.next;
-        node.next = nodeToInsert;
-        nodeToInsert.prev = node;
+        nodeAfter.next.prev = nodeToInsert;
+        nodeToInsert.next = nodeAfter.next;
+        nodeAfter.next = nodeToInsert;
+        nodeToInsert.prev = nodeAfter;
     }
 
     private void insertFirst(Node nodeToInsert) {
+        if (head == null) {
+            addInTail(nodeToInsert);
+            return;
+        }
+
         this.head.prev = nodeToInsert;
         nodeToInsert.next = this.head;
         this.head = nodeToInsert;
-
-        if (count() == 1) {
-            this.tail = nodeToInsert;
-        }
     }
 }
