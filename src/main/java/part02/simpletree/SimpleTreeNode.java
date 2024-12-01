@@ -1,4 +1,4 @@
-package part02.simpletreenode;
+package part02.simpletree;
 
 import java.util.*;
 
