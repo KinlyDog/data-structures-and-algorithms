@@ -2,8 +2,6 @@ package part01.doublelinkedlist;
 
 import java.util.ArrayList;
 
-// todo сделать реализацию с фиктивным/пустым (dummy) узлом
-
 public class DoubleLinkedList {
     public Node head;
     public Node tail;
